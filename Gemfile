@@ -48,6 +48,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "mailcatcher", "~> 0.10.0"
 end
 
 group :test do
@@ -57,3 +58,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 3.0"
+
+gem "bcrypt", "~> 3.1"
