@@ -1,0 +1,5 @@
+<div id="flash" class="absolute flex flex-col z-40 left-1/2 transform -translate-x-1">
+  <% flash.each do |type, message| %>
+    <%= tag.div message, class: ["mx-2 mt-2 rounded-xl p-2 shadow opacity-90 cursor-pointer break-normal", flash_type(type)], data: { controller: "element-remove", action: "click->element-remove#remove" } %>
+  <% end %>
+</div>

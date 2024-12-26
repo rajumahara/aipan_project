@@ -1,5 +1,5 @@
 <h1>Password Reset</h1>
-<%= form_with url: password_resets_path, class: "p-4 shadow border rounded-md mt-8 flex flex-col space-y-4" do |form| %>
+<%= form_with url: password_reset_path, class: "p-4 shadow border rounded-md mt-8 flex flex-col space-y-4" do |form| %>
   <div class="w-full">
     <%= form.label :email, class: "block font-medium text-gray-700" %>
     <%= form.text_field :email, class: "p-2 border rounded-md text-black" %>

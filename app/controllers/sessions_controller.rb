@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class SessionsController < AuthController
   before_action :redirect_if_signed_in, only: [:new, :create]
   before_action :require_authentication, only: [:destroy]
 

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show]
   resource :registration, only: %i[new create]
   resource :session, only: %i[new create destroy]
-  resource :password_resets, only: %i[new create edit update]
+  resource :password_reset, only: %i[new create edit update]
+  resources :users, only: %i[show edit update]
+  resources :organizations, except: %i[index]
 end

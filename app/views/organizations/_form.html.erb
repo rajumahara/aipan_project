@@ -1,0 +1,16 @@
+<%= form_with model: organization, class: "flex flex-col space-y-4", data: { controller: "update-preview" } do |form| %>
+  <div class="w-full">
+    <%= form.label :name, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "text-field" %>
+  </div>
+  <div class="w-full">
+    <div class="mb-2">
+      <%= image_tag organization.logo.attached? ? organization.logo : 'camera.svg', alt: 'src', class: 'w-20 w-20 border border border-gray-200 rounded-lg', data: { update_preview_target: "image" } %>
+    </div>
+    <%= form.file_field :logo, class: "p-2 border rounded-md text-black", accept: "image/png, image/jpg, image.jpeg, image/webp", data: { update_preview_target: "input", action: "update-preview#previewImage" } %>
+  </div>
+  <div class="flex items-center space-x-2">
+    <%= form.submit "Save", class: "btn-primary self-start" %>
+    <%= link_to 'Cancel', dashboard_path, class: 'secondary' %>
+  </div>
+<% end %>

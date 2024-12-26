@@ -1,0 +1,9 @@
+<%= turbo_stream.replace dom_id(@organization) do %>
+  <%= render partial: "organizations/organization", locals: { organization: @organization } %>
+<% end %>
+<%= turbo_stream.replace "new_organization" do %>
+  <%= turbo_frame_tag Organization.new %>
+<% end %>
+<%= turbo_stream.replace "flash" do %>
+  <%= render partial: "shared/flash" %>
+<% end %>

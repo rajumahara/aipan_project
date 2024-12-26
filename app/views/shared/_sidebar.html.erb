@@ -1,0 +1,6 @@
+   
+<div class="min-w-16 w-16 flex flex-col items-center bg-green-200 py-4">
+  <%= link_to dashboard_path, class: "w-12 h-12 flex items-center justify-center bg-green-500 text-white rounded-full"  do %>
+    <span class="uppercase"><%= Current.user.email.slice(0,2) %></span>
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<%= turbo_stream.remove dom_id(@organization) %>
+<%= turbo_stream.replace "flash" do %>
+  <%= render partial: "shared/flash" %>
+<% end %>

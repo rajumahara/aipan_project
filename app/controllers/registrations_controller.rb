@@ -1,5 +1,6 @@
-class RegistrationsController < ApplicationController
+class RegistrationsController < AuthController
   before_action :redirect_if_signed_in, only: [:new, :create]
+  # layout "auth_layout"
 
   def new
     @user = User.new

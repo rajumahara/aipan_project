@@ -1,0 +1,10 @@
+<div class="p-4 flex flex-col space-y-4">
+  <% if @profile.avatar.attached? %>
+    <%= image_tag url_for(@profile.avatar) , class: "w-20 h-20 rounded-full" %>
+  <% end%>
+  <p>Email: <span class="font-bold"> <%= @user.email %></span></p>
+  <p>Full Name: <span class="font-bold"> <%= @profile.full_name %></span></p>
+  <p>Address: <span class="font-bold"><%= @profile.full_address %></span></p>
+  <p>Timezone: <span class="font-bold"><%= @profile.timezone %></span></p>
+  <%= link_to 'Edit user profile', edit_user_path(@user), class: 'w-40 rounded-md bg-green-500 text-white text-medium p-2' %>
+</div>

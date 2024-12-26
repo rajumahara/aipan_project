@@ -1,0 +1,36 @@
+<div class="w-full">
+  <h1 class="text-xl font-bold text-blue-500">Edit profile</h1>
+  <%= form_with model: @profile, url: user_path(@user), data: { controller: "update-preview" }, class: "w-1/2 flex flex-col space-y-4" do |form| %>
+    <div class="w-full">
+      <%= form.label :first_name, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :first_name, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :last_name, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :last_name, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :address, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :address, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :state, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :state, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :pin_code, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :pin_code, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <%= form.label :timezone, class: "block font-medium text-gray-700" %>
+      <%= form.text_field :timezone, class: "p-2 border rounded-md text-black" %>
+    </div>
+    <div class="w-full">
+      <div class="mb-2">
+        <%= image_tag @profile.avatar.attached? ? @profile.avatar : 'camera.svg', alt: 'src', class: 'w-20 w-20 border border border-gray-200 rounded-lg', data: { update_preview_target: "image" } %>
+      </div>
+      <%= form.file_field :avatar, class: "p-2 border rounded-md text-black", accept: "image/png, image/jpg, image.jpeg, image/webp", data: { update_preview_target: "input", action: "update-preview#previewImage" } %>
+    </div>
+    <%= form.submit "Save", class: "w-40 rounded-md bg-green-500 text-white text-medium p-2" %>
+  <% end %>
+</div>
